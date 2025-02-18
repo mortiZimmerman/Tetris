@@ -26,3 +26,27 @@ let currentPiece ={
     x:3,
     y:0
 };
+
+
+function drawBoard(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    board.forEach((row,y) =>{
+        row.forEach((value,x) =>{
+            if(value){
+                drawBlock(x,y,"cyan");
+            }
+        });
+    });
+}
+
+
+
+
+
+function drawBlock(x,y,color){
+    ctx.fillStyle = color;
+    ctx.fillRect(x * SIZE, y * SIZE, SIZE, SIZE);
+    ctx.strokeStyle = "black";
+    ctx.strokeRect(x * SIZE, y * SIZE, SIZE, SIZE);
+
+}
